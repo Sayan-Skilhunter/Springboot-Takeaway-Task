@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Home page</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+input[type=text] {
+  padding: 6px;
+  border: none;
+  font-size: 17px;
+  border: 1px solid #ccc;
+}
+.input {
+	border: none;
+	padding: 6px 32px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	background-color: white; 
+	color: black; 
+	border: 2px solid #4CAF50;
+  }
+  
+.input:hover {
+	background-color: #4CAF50;
+	color: white;
+}
+h2, h3 {
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+</style>
+</head>
+<body>
+	<div class="card">
+	<p>
+		<span><h2>Add New House</h2></span>
+	</p>
+	<form action="#" th:action="@{/save}" th:object="${house}"
+		method="post">
+		<p>
+			<h3>House Name: </h3><input type="text" th:field="*{houseName}" />
+		</p>
+		<p>
+			<h3>House Address: </p></h3><input type="text" th:field="*{houseAddress}" />
+		</p>
+
+		<p>
+			<h3>Locality: </h3><input type="text" th:field="*{locality}" />
+		</p>
+		<p>
+			<h3>City: </h3><input type="text" th:field="*{city}" />
+		</p>
+		<p>
+			<input class="input" type="submit" value="Submit" /> <input class="input" type="reset"
+				value="Reset" />
+		</p>
+	</form>
+</div>
+</body>
+</html>
